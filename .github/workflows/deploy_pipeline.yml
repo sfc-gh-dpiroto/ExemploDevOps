@@ -17,7 +17,7 @@ jobs:
     env:
       REPO_NAME: "ADMIN.GIT.EXEMPLO_DEVOPS_REPO"
       SNOWFLAKE_CONNECTIONS_DEFAULT_AUTHENTICATOR: "SNOWFLAKE_JWT"
-      SNOWFLAKE_CONNECTIONS_DEFAULT_PRIVATE_KEY_FILE: ".snowflake/snowflake_rsa_key"
+      SNOWFLAKE_CONNECTIONS_DEFAULT_PRIVATE_KEY_FILE: ".snow_conf/snowflake_rsa_key"
       # Read connection secrets
       SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_USER }}
@@ -30,14 +30,14 @@ jobs:
       # Write private key secret as file
       - name: Configure Private Key
         run: |
-          echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snowflake/snowflake_rsa_key
+          echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snow_conf/snowflake_rsa_key
 
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
           cli-version: "latest"
-          default-config-file-path: ".snowflake/config.toml"
+          default-config-file-path: ".snow_conf/config.toml"
 
       # Update Snowflake's copy of the repository
       - name: Fetch repository changes
