@@ -31,10 +31,14 @@ jobs:
       - name: Configure Private Key
         run: |
           echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snow_conf/snowflake_rsa_key
+          echo .snow_conf/snowflake_rsa_key
 
       - name: Configure Snowcli Credentials
         run: |
           echo "${{ secrets.SNOW_CLI_CONF }}" > .snow_conf/config.toml
+          echo .snow_conf/config.toml
+
+        
             
 
       # Install Snowflake CLI GitHub Action and point to config file
