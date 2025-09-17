@@ -27,7 +27,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Write private key secret as file
+      # Write private key secret  as file
       - name: Configure Private Key
         run: |
           echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snow_conf/snowflake_rsa_key
