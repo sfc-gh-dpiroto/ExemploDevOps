@@ -12,7 +12,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     env:
       REPO_NAME: "ADMIN.GIT.EXEMPLO_DEVOPS_REPO"
@@ -34,7 +34,7 @@ jobs:
 
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
-        uses: Snowflake-Labs/snowflake-cli-action@v2.0
+        uses: Snowflake-Labs/snowflake-cli-action@v1.5
         with:
           cli-version: "latest"
           default-config-file-path: ".snowflake/config.toml"
