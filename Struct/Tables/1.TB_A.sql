@@ -1,4 +1,4 @@
 CREATE OR ALTER {{ AMBIENTE }}.PUBLIC.TB_A(
     ID INT, 
     NOME VARCHAR
-);
+) ;
