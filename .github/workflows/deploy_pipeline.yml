@@ -32,10 +32,6 @@ jobs:
         run: |
           echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snow_conf/snowflake_rsa_key  
 
-      - name: convert key-pair
-        run: |
-          openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in your_private_key.pem -out pkcs8_private_key.pem
-
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
