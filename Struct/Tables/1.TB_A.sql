@@ -1,4 +1,12 @@
 CREATE OR ALTER TABLE DB_DEVOPS_{{ AMBIENTE }}.PUBLIC.TB_A(
     ID INT, 
+    NOME VARCHAR,
+    DataNascimento timestamp
+) ;
+
+CREATE OR ALTER TABLE DB_DEVOPS_{{ AMBIENTE }}.PUBLIC.TB_B(
+    ID INT, 
     NOME VARCHAR
 ) ;
+
+
