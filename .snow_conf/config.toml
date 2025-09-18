@@ -1,0 +1,9 @@
+[connections.default]
+warehouse = "COMPUTE_WH"
+role = "ACCOUNTADMIN"
+database = "ADMIN"
+schema = "PUBLIC"
+account = "SFSENORTHAMERICA-DPC_OREGON_SOURCE"
+user = "dpiroto"
+authenticator = "SNOWFLAKE_JWT"
+private_key_file = ".snow_conf/snowflake_rsa_key"
