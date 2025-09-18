@@ -53,7 +53,7 @@ jobs:
             RETENTION_TIME=0
           fi
           snow git execute \
-            "@${REPO_NAME}/branches/${BRANCH_NAME}/Struct/Databases_Schemas/1. DB.sql" \
+            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/Databases_Schemas/1. DB.sql" \
             -D "AMBIENTE='${BRANCH_NAME}'" \
             -D "retention_time=${RETENTION_TIME}"
 
