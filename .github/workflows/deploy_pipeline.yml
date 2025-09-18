@@ -54,10 +54,10 @@ jobs:
           fi
           snow git execute \
             "@${REPO_NAME}/branches/${BRANCH_NAME}/Struct/Databases_Schemas/[1]_*" \
-            -D "environment='${BRANCH_NAME}'" \
+            -D "AMBIENTE='${BRANCH_NAME}'" \
             -D "retention_time=${RETENTION_TIME}"
 
           snow git execute \
             "@${REPO_NAME}/branches/${BRANCH_NAME}/Struct/Tables/[1]_*" \
-            -D "environment='${BRANCH_NAME}'" \
+            -D "AMBIENTE='${BRANCH_NAME}'" \
             -D "retention_time=${RETENTION_TIME}"
