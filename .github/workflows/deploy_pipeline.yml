@@ -41,7 +41,6 @@ jobs:
 
       # Update Snowflake's copy of the repository
       - name: Fetch repository changes
-        echo: "nome repositorio:" "${REPO_NAME}"
         run: snow git fetch "${REPO_NAME}"
 
       # Deploy pipeline with branch specific parameters
