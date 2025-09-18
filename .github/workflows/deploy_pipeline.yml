@@ -31,15 +31,7 @@ jobs:
       - name: Configure Private Key
         run: |
           echo "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}" > .snow_conf/snowflake_rsa_key
-          cat .snow_conf/snowflake_rsa_key
-
-      - name: Configure Snowcli Credentials
-        run: |
-          echo "${{ secrets.SNOW_CLI_CONF }}" > .snow_conf/config.toml
-          cat .snow_conf/config.toml
-
-        
-            
+          cat .snow_conf/snowflake_rsa_key            
 
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
@@ -50,6 +42,7 @@ jobs:
 
       # Update Snowflake's copy of the repository
       - name: Fetch repository changes
+        echo "nome repositorio:" "${REPO_NAME}"
         run: snow git fetch "${REPO_NAME}"
 
       # Deploy pipeline with branch specific parameters
