@@ -58,7 +58,7 @@ jobs:
             -D "retention_time=${RETENTION_TIME}"
 
             snow git execute \
-            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/2-Configuracoes/Parametrocs.sql" \
+            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/2-Configuracoes/Parametros.sql" \
             -D "AMBIENTE='${BRANCH_NAME}'" \
             -D "retention_time=${RETENTION_TIME}"
 
