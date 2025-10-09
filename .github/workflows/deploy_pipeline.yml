@@ -53,11 +53,16 @@ jobs:
             RETENTION_TIME=0
           fi
           snow git execute \
-            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/Databases_Schemas/1.DB.sql" \
+            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/1-Databases_Schemas/1.DB.sql" \
+            -D "AMBIENTE='${BRANCH_NAME}'" \
+            -D "retention_time=${RETENTION_TIME}"
+
+            snow git execute \
+            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/2-Configuracoes/Parametros.sql" \
             -D "AMBIENTE='${BRANCH_NAME}'" \
             -D "retention_time=${RETENTION_TIME}"
 
           snow git execute \
-            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/Tables/1.TB_A.sql" \
+            "@ADMIN.GIT.EXEMPLO_DEVOPS_REPO/branches/dev/Struct/3-Tabelas/Vendas/Bronze/*" \
             -D "AMBIENTE='${BRANCH_NAME}'" \
             -D "retention_time=${RETENTION_TIME}"
